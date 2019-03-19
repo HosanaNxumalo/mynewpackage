@@ -11,17 +11,29 @@ def bubble_sort(items):
 
 def merge_sort(items):
 
-    '''Return array of items, sorted in ascending order'''
-    def lin_merge(list1, list2):
+      def lin_merge(list1, list2):
+            
+          new_list = []
+          while (len(list1) > 0  and len(list2) > 0):
+              if list1[0] < list2[0]:
+                  new_list.append(list1.pop(0))
+              else:
+                  new_list.append(list2.pop(0))
 
-        new_list = []
-        while (len(list1) > 0  and len(list2) > 0):
-            if list1[0] < list2[0]:
-                new_list.append(list1.pop(0))
-            else:
-                new_list.append(list2.pop(0))
+          return new_list + list1 + list2
 
-        return new_list + list1 + list2
+      # split items in middle
+      length_items = len(items)
+      if length_items == 1:
+          return items
+
+      middle = int(len_items/2)
+      list1 = merge_sort(items[:middle])
+      list2 = merge_sort(items[middle:])
+
+      return lin_merge(list1, list2)
+    
+    
 
 def quick_sort(items):
 
