@@ -34,3 +34,7 @@ def factorial(n):
 def reverse(word):
 
     '''Return word in reverse'''
+    if len(word) == 0:
+        return word
+    else:
+        return word[-1] + reverse(word[0:-1])
