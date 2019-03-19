@@ -27,7 +27,7 @@ def merge_sort(items):
       if length_items == 1:
           return items
 
-      middle = int(len_items/2)
+      middle = int(length_items/2)
       list1 = merge_sort(items[:middle])
       list2 = merge_sort(items[middle:])
 
