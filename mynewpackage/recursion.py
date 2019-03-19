@@ -1,7 +1,7 @@
 def sum_array(array):
 
     '''Return sum of all items in array'''
-     sum_of = 0
+    sum_of = 0
 
     for i in array:
         if isinstance(i, int):
